@@ -6,10 +6,11 @@ BrewRoute is a modern web application designed to enhance your tea journey exper
 
 - **Responsive Design**: Built with Tailwind CSS for a mobile-first, responsive design.
 - **Reusable Components**: Modular and reusable components for scalability.
+- **Blockchain Integration**: Provides traceability and transparency using blockchain technology.
 - **Custom Hooks**: Simplify state management and logic with custom React hooks.
 - **Static Assets**: Organized public folder for images and other assets.
 
-## Client UI Structure
+## Project Structure
 
 ```
 brewroute-v02/
@@ -29,6 +30,12 @@ brewroute-v02/
 │   ├── postcss.config.mjs       # PostCSS configuration
 │   ├── tailwind.config.js       # Tailwind CSS configuration
 │   └── tsconfig.json            # TypeScript configuration
+├── brew-route-smart-contact/    # Smart contracts for blockchain integration
+│   ├── Move.toml                # Move package configuration
+│   ├── scripts/                 # Deployment and utility scripts
+│   ├── sources/                 # Move smart contract source files
+│   │   └── brew-route.move      # Main Move module
+│   └── tests/                   # Tests for smart contracts
 ```
 
 ## Getting Started
@@ -37,6 +44,8 @@ brewroute-v02/
 
 - Node.js (v16 or higher)
 - pnpm (preferred package manager)
+- Rust (for Move smart contract development)
+- Aptos CLI (for blockchain interaction)
 
 ### Installation
 
@@ -61,14 +70,37 @@ brewroute-v02/
 
 4. Open your browser and navigate to `http://localhost:3000`.
 
-## Scripts
+### Setting Up Smart Contracts
 
-<!--
-- `pnpm dev`: Start the development server.
-- `pnpm build`: Build the application for production.
-- `pnpm start`: Start the production server.
-- `pnpm lint`: Run linting checks.
--->
+1. Navigate to the `brew-route-smart-contact` directory:
+
+   ```bash
+   cd brew-route-smart-contact
+   ```
+
+2. Install the Aptos CLI:
+
+   ```bash
+   cargo install aptos
+   ```
+
+3. Initialize the Aptos environment:
+
+   ```bash
+   aptos init
+   ```
+
+4. Run tests for the Move smart contracts:
+
+   ```bash
+   aptos move test
+   ```
+
+5. Deploy the smart contracts:
+
+   ```bash
+   aptos move publish --profile default
+   ```
 
 ## Technologies Used
 
@@ -76,18 +108,8 @@ brewroute-v02/
 - **Tailwind CSS**: Utility-first CSS framework for styling.
 - **TypeScript**: Strongly typed JavaScript for better developer experience.
 - **pnpm**: Fast and efficient package manager.
-
-## Contributing
-
-<!--
-Contributions are welcome! Please follow these steps:
-
-1. Fork the repository.
-2. Create a new branch: `git checkout -b feature-name`.
-3. Commit your changes: `git commit -m 'Add feature-name'`.
-4. Push to the branch: `git push origin feature-name`.
-5. Open a pull request.
--->
+- **Move**: Smart contract language for Aptos blockchain.
+- **Aptos CLI**: Command-line interface for interacting with the Aptos blockchain.
 
 ## Contributors
 

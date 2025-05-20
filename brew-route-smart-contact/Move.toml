@@ -1,0 +1,15 @@
+[package]
+name = "brew-route"
+version = "1.0.0"
+authors = []
+
+[addresses]
+brewroute = "0x68598abf9a7d5572b1104ccf42a78b4c70582df1ad6d0eb9470233152aeb7252"
+[dev-addresses]
+
+[dependencies.AptosFramework]
+git = "https://github.com/aptos-labs/aptos-framework.git"
+rev = "mainnet"
+subdir = "aptos-framework"
+
+[dev-dependencies]
